@@ -1,0 +1,265 @@
+.cover {
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  font-family: "Inter", sans-serif;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background-image: url(../../public/assets/landingpage/NAVFIX.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.nav_first {
+  width: 10%;
+  margin-left: 50px;
+}
+.nav_third {
+  margin-right: 60px;
+}
+.navbar > ul {
+  display: flex;
+}
+.navbar > ul > li {
+  list-style-type: none;
+}
+
+.navbar > ul > li > a {
+  margin-left: 30px;
+  font-weight: 500;
+  color: rgba(193, 193, 193, 1);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav_second > li > a:hover {
+  color: rgba(0, 132, 254, 1);
+}
+
+.sign_in {
+  color: white;
+}
+
+.register {
+  color: rgba(0, 132, 254, 1);
+  background-color: white;
+  padding: 10px 40px 10px 40px;
+  border-radius: 30px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 110px;
+  margin-top: 100px;
+  gap: 33px;
+  background-image: url(../../public/assets/cepkow/Contact\ USER.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+.content > h1 {
+  font-size: 60px;
+}
+
+.content > p {
+  color: rgba(139, 147, 162, 1);
+  font-size: 20px;
+}
+
+.border {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 559px;
+  height: 359px;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: black;
+  gap: 42px;
+  margin-top: 50px;
+}
+
+.border > img {
+  width: 70.66px;
+  height: 70.66px;
+}
+
+.border > p {
+  font-size: 34px;
+}
+
+.border > a {
+  font-size: 22.6px;
+  background-color: rgba(0, 132, 254, 1);
+  padding: 10px 190px 10px 190px;
+  border-radius: 36px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.border > a:hover {
+  background-color: rgba(0, 67, 129, 1);
+  transition: all 0.5s ease-in-out;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+}
+
+.container_1 {
+  display: flex;
+  height: 350px;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 80px;
+}
+
+.c_01 {
+  display: flex;
+  width: 300px;
+  flex-direction: column;
+}
+
+.c_01 > img {
+  width: 50%;
+}
+
+.c_01 > p {
+  margin-top: 25px;
+  color: rgba(139, 147, 162, 1);
+  font-weight: 500;
+  line-height: 25px;
+}
+
+.c_02 {
+  width: 500px;
+}
+
+.c_02 > p {
+  font-weight: 700;
+}
+
+.c_02_navigation {
+  margin-top: 25px;
+}
+
+.c_02_navigation > ul > li {
+  text-decoration: none;
+  list-style-type: none;
+  margin-top: 15px;
+}
+
+.c_02_navigation > ul > li > a {
+  color: rgba(139, 147, 162, 1);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.ul_2 {
+  margin-left: 50px;
+}
+
+.c_03 {
+  width: 300px;
+}
+
+.c_03 > p {
+  font-weight: 700;
+}
+
+.c-03 > ul > li > a {
+  color: rgba(139, 147, 162, 1);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.menu_ul {
+  margin-top: 25px;
+}
+
+.menu_ul > li {
+  margin-top: 15px;
+}
+
+.c_03 > ul > li {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.c_04 {
+  width: 300px;
+}
+
+.grey {
+  color: rgba(139, 147, 162, 1);
+  font-weight: 500;
+}
+.contact_p {
+  font-weight: 700;
+}
+
+.contact_navigation {
+  margin-top: 25px;
+}
+
+.contact_navigation > p {
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.c_02_navigation {
+  display: flex;
+  flex-direction: row;
+}
+
+.container_2 {
+  display: flex;
+  height: 60px;
+  color: white;
+  background-color: rgba(0, 86, 184, 1);
+  justify-content: center;
+  align-items: center;
+}
+
+.container_2 > p {
+  text-align: center;
+  font-weight: 500;
+}
+
+.blue {
+  color: rgba(0, 132, 254, 1);
+  font-weight: 500;
+}
+
+.bg_tambahan {
+  height: 300px;
+  background-image: url(../../public/assets/landingpage/Footer\ .png);
+  background-size: cover;
+  margin-top: 70px;
+}
+
+.logo_contact {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.logo_contact > img {
+  width: 20%;
+  margin-top: 20px;
+}
