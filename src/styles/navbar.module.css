@@ -1,0 +1,55 @@
+.cover {
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  font-family: "Inter", sans-serif;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background-image: url(../../public/assets/landingpage/NAVFIX.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.nav_first {
+  width: 10%;
+  margin-left: 50px;
+}
+.nav_third {
+  margin-right: 60px;
+}
+.navbar > ul {
+  display: flex;
+}
+.navbar > ul > li {
+  list-style-type: none;
+}
+
+.navbar > ul > li > a {
+  margin-left: 30px;
+  font-weight: 500;
+  color: rgba(193, 193, 193, 1);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav_second > li > a:hover {
+  color: rgba(0, 132, 254, 1);
+}
+
+.sign_in {
+  color: white;
+}
+.register {
+  color: rgba(0, 132, 254, 1);
+  background-color: white;
+  padding: 10px 40px 10px 40px;
+  border-radius: 30px;
+}

@@ -7,10 +7,13 @@ import jiddan from "../../../public/assets/tutors/jiddan.png";
 import latifha from "../../../public/assets/tutors/latifha.png";
 import naufla from "../../../public/assets/tutors/naufla.png";
 import nijar from "../../../public/assets/tutors/nijar.png";
+import Navbar from "@/component/navbar";
+import Footer from "@/component/footer";
 
 export default function index() {
   return (
     <div className="bg-white">
+      <Navbar />
       <div className="container mx-auto font-sans pt-12 px-11">
         <div>
           <h1 className="font-semibold text-6xl text-[#1B1B1B]">Our Tutor</h1>
@@ -62,6 +65,7 @@ export default function index() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
