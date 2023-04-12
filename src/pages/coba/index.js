@@ -1,10 +1,10 @@
 import React from "react";
-import Modals from "@/component/modalsuccess";
+import ModalNot from "@/component/modalnotlogin";
 
 const index = () => {
   return (
     <>
-      <Modals />
+      <ModalNot />
     </>
   );
 };
