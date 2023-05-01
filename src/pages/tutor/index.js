@@ -1,71 +1,63 @@
-import React from "react";
-import Image from "next/image";
-import salma from "../../../public/assets/tutors/salma.png";
-import gerard from "../../../public/assets/tutors/gerard.png";
-import cepkow from "../../../public/assets/tutors/cepkow.png";
-import jiddan from "../../../public/assets/tutors/jiddan.png";
-import latifha from "../../../public/assets/tutors/latifha.png";
-import naufla from "../../../public/assets/tutors/naufla.png";
-import nijar from "../../../public/assets/tutors/nijar.png";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Navbar from "@/component/navbar";
 import Footer from "@/component/footer";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function index() {
+  const [tutor, setTutor] = useState([]);
+
+  useEffect(() => {
+    getTutor();
+  }, []);
+
+  const getTutor = async () => {
+    const response = await axios.get("http://localhost:5000/tutor");
+    setTutor(response.data);
+    console.log(response);
+  };
+
+  const deleteTutor = async (tutorId) => {
+    try {
+      await axios.delete(`http://localhost:5000/tutor/${tutorId}`);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
-    <div className="bg-white">
-      <Navbar />
-      <div className="container mx-auto font-sans pt-12 px-11">
-        <div>
-          <h1 className="font-semibold text-6xl text-[#1B1B1B]">Our Tutor</h1>
-          <p className="font-medium font-xl text-[#8B93A2]"> Edutama works with dozens of mentors with expertise and experience in their fields</p>
-        </div>
-
-        <div className="mx-auto container mt-12 sm:flex sm:flex-wrap sm:justify-center sm:gap-6 lg:gap-10">
-          <div className="border rounded-xl shadow-xl shadow-gray-200 mx-auto px-4  flex justify-center  flex-col mb-10 sm:mb-0">
-            <Image alt="salma" src={salma} className="mx-auto" />
-
-            <p className="text-[#1B1D1F] text-xl text-center mt-4">Salma Riyanti Hanifah</p>
-            <p className="text-[#8B93A2] text-center mb-5">Project Management Tutor</p>
+    <>
+      <div className="bg-white">
+        <Navbar />
+        <div className="container mx-auto font-sans pt-12 px-11">
+          <div>
+            <h1 className="font-semibold text-6xl text-[#1B1B1B]">Our Tutor</h1>
+            <p className="font-medium font-xl text-[#8B93A2]"> Edutama works with dozens of mentors with expertise and experience in their fields</p>
+            <Link href="/addtutor">
+              <button className="bg-green-600 text-white font-sans border rounded-xl w-28 h-12 mt-5 font-semibold text-xl">add</button>
+            </Link>
           </div>
-          <div className="border rounded-xl shadow-xl shadow-gray-200 mx-auto px-4  flex justify-center  flex-col mb-10 sm:mb-0">
-            <Image alt="salma" src={gerard} className="mx-auto" />
+          <div className="mx-auto container mt-12 sm:flex sm:flex-wrap sm:justify-center sm:gap-6 lg:gap-10">
+            {tutor.map((x) => (
+              <div className="border rounded-xl shadow-xl shadow-gray-200 mx-auto px-4  flex justify-center  flex-col mb-10 sm:mb-0" key={x.id}>
+                <Image alt="salma" src={x.url} width={250} height={250} className="mx-auto" unoptimized />
 
-            <p className="text-[#1B1D1F] text-xl text-center mt-4">Gerard Abdul Rasyid</p>
-            <p className="text-[#8B93A2] text-center mb-5">Front-End Tutor</p>
-          </div>
-          <div className="border rounded-xl shadow-xl shadow-gray-200 mx-auto px-4  flex justify-center  flex-col mb-10 sm:mb-0">
-            <Image alt="salma" src={latifha} className="mx-auto" />
-
-            <p className="text-[#1B1D1F] text-xl text-center mt-4">Latifha Aini</p>
-            <p className="text-[#8B93A2] text-center mb-5">Database Administration Tutor</p>
-          </div>
-          <div className="border rounded-xl shadow-xl shadow-gray-200 mx-auto px-4  flex justify-center  flex-col mb-10 sm:mb-0">
-            <Image alt="salma" src={cepkow} className="mx-auto" />
-
-            <p className="text-[#1B1D1F] text-xl text-center mt-4">Chevko Ronaldi Savino</p>
-            <p className="text-[#8B93A2] text-center mb-5">Front-End Tutor</p>
-          </div>
-          <div className="border rounded-xl shadow-xl shadow-gray-200 mx-auto px-4  flex justify-center  flex-col mb-10 sm:mb-0">
-            <Image alt="salma" src={jiddan} className="mx-auto" />
-
-            <p className="text-[#1B1D1F] text-xl text-center mt-4">Muhammad Jiddan Gumilang</p>
-            <p className="text-[#8B93A2] text-center mb-5">Front-End Tutor</p>
-          </div>
-          <div className="border rounded-xl shadow-xl shadow-gray-200 mx-auto px-4  flex justify-center  flex-col mb-10 sm:mb-0">
-            <Image alt="salma" src={naufla} className="mx-auto" />
-
-            <p className="text-[#1B1D1F] text-xl text-center mt-4">Naufla Zahrani Fikar</p>
-            <p className="text-[#8B93A2] text-center mb-5">UI/UX Design Tutor</p>
-          </div>
-          <div className="border rounded-xl shadow-xl shadow-gray-200 mx-auto px-4  flex justify-center  flex-col mb-10 sm:mb-0">
-            <Image alt="salma" src={nijar} className="mx-auto" />
-
-            <p className="text-[#1B1D1F] text-xl text-center mt-4">Nizar Sya Bana</p>
-            <p className="text-[#8B93A2] text-center mb-5">Back-End Tutor</p>
+                <p className="text-[#1B1D1F] text-xl text-center mt-4">{x.name}</p>
+                <p className="text-[#8B93A2] text-center mb-5">{x.roles}</p>
+                <div className="flex justify-between p-5 font-sans font-semibold text-xl">
+                  <button onClick={deleteTutor} className="bg-red-600 text-white  font-sans border rounded-xl w-24 h-12 mt-2 ">
+                    Delete
+                  </button>
+                  <button className="bg-green-600 text-white  font-sans border rounded-xl w-24 h-12 mt-2 ">Update</button>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
+
+        <Footer />
       </div>
-      <Footer />
-    </div>
+      {/* {tutor.map((tutor)=>())} */}
+    </>
   );
 }

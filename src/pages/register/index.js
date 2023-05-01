@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../styles/register.module.css";
+import Link from "next/link";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function index() {
+  const initialValues = {
+    emailCust: "",
+    passwordCust: "",
+  };
+  const [values, setValues] = useState(initialValues);
+
+  const handleChange = (e) => {
+    setValues({
+      ...values,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   return (
     <>
       <div className={styles.body}>
@@ -14,7 +30,7 @@ export default function index() {
           </div>
           <div className={styles.lgedu}>
             <img src="/logo 1.png" alt="logo edutama" className={styles.logoedu} />
-            <h2>New Account</h2>
+            <h2 className="font-sans text-4xl font-semibold">New Account</h2>
             <p className={styles.plgedu}>Please complete the form below, use your valid data</p>
           </div>
           <div className={styles.formBx}>
@@ -35,9 +51,18 @@ export default function index() {
                 <span>Password</span>
                 <input type="password" />
               </div>
+
               <div className={styles.inputBtxc}>
-                <button onclick="javascript:location.href='SignupPage.html'">Continue</button>
+                <Link href="/">
+                  <button onclick="">Continue</button>
+                </Link>
               </div>
+
+              <Link href="/login">
+                <div className={styles.inputBtxcc}>
+                  <button onclick="">Already Have Account?</button>
+                </div>
+              </Link>
             </form>
           </div>
         </div>

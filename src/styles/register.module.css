@@ -33,8 +33,8 @@
   flex-direction: column;
 }
 .lgedu {
-  width: 100%;
-  padding-top: 30px;
+  width: 40%;
+  padding-top: 60px;
 }
 
 .logoedu {
@@ -115,6 +115,29 @@
   background-color: #ddddddad;
 }
 .contentBx .formBx .inputBtxc button:active {
+  background-color: rgb(190, 190, 190);
+  box-shadow: 0 2px #666;
+  transform: translateY(2px);
+}
+.contentBx .formBx .inputBtxcc button {
+  width: 100%;
+  height: 44px;
+  font-weight: 600;
+  padding: 5px;
+  margin: 10px 5px 5px 0;
+  border-radius: 15px;
+  background-color: #fefefe;
+  color: #0084fe;
+  border-color: #0084fe;
+  /* border-color: #0084fe; */
+  border: none;
+  cursor: pointer;
+}
+
+.contentBx .formBx .inputBtxcc button:hover {
+  background-color: #0083fe7e;
+}
+.contentBx .formBx .inputBtxcc button:active {
   background-color: rgb(190, 190, 190);
   box-shadow: 0 2px #666;
   transform: translateY(2px);

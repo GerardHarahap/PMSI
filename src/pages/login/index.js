@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../styles/login.module.css";
 import img1 from "../../../public/assets/login/study 1,5.png";
+import Link from "next/link";
+import { useNavigate } from "react-router-dom";
 
 export default function index() {
+  const initialValues = {
+    email: "",
+    password: "",
+  };
+  const [values, setValues] = useState(initialValues);
+
+  const handleChange = (e) => {
+    setValues({
+      ...values,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = () => {};
+
   return (
     <>
       <div className={styles.body}>
@@ -15,15 +32,16 @@ export default function index() {
             <h2 className={styles.h2}>Welcome Back!</h2>
             <p className={styles.plgedu}>Let's continue studying at Edutama to achieve your goals</p>
           </div>
-          <div className={styles.formBx}>
-            <form>
+          <div id="LoginForm" className={styles.formBx}>
+            <form id="FormLogin" onSubmit={handleSubmit}>
               <div className={styles.inputBx}>
-                <span>Username</span>
-                <input type="text" />
+                <label className="form-label" htmlFor="emailLogin">
+                  Email
+                </label>
+                <input id="emailLogin" type="email" className="form-control" name="email" value={values.email} onChange={handleChange} />
               </div>
               <div className={styles.inputBx}>
                 <span>Password</span>
-                <ion-icon name="eye-outline"></ion-icon>
                 <input type="password" maxlength="30" />
               </div>
 
@@ -31,9 +49,13 @@ export default function index() {
                 Forget Password?
               </a>
 
-              <button className={styles.inputBtxs}>Sign In</button>
+              <Link href="/">
+                <button className={styles.inputBtxs}>Sign In</button>
+              </Link>
 
-              <button className={styles.inputBtxc}>Create New Account</button>
+              <Link href="/register">
+                <button className={styles.inputBtxc}>Create New Account</button>
+              </Link>
             </form>
           </div>
         </div>
