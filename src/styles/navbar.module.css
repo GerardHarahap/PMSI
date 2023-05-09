@@ -16,6 +16,7 @@
   background-image: url(../../public/assets/landingpage/NAVFIX.png);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position-x: 1.35rem;
 }
 
 .nav_first {
@@ -38,6 +39,10 @@
   color: rgba(193, 193, 193, 1);
   cursor: pointer;
   text-decoration: none;
+}
+
+.nav_second {
+  margin-left: -10rem;
 }
 
 .nav_second > li > a:hover {

@@ -37,6 +37,11 @@ export default function index() {
               Edutama works with dozens of mentors with expertise and experience
               in their fields
             </p>
+            <Link href="/addtutor">
+              <button className="bg-green-600 text-white font-sans border rounded-xl w-28 h-12 mt-5 font-semibold text-xl">
+                add
+              </button>
+            </Link>
           </div>
           <div className="mx-auto container mt-12 sm:flex sm:flex-wrap sm:justify-center sm:gap-6 lg:gap-10">
             {tutor.map((x) => (
@@ -57,7 +62,17 @@ export default function index() {
                   {x.name}
                 </p>
                 <p className="text-[#8B93A2] text-center mb-5">{x.roles}</p>
-                <div className="flex justify-between p-5 font-sans font-semibold text-xl"></div>
+                <div className="flex justify-between p-5 font-sans font-semibold text-xl">
+                  <button
+                    onClick={deleteTutor}
+                    className="bg-red-600 text-white  font-sans border rounded-xl w-24 h-12 mt-2 "
+                  >
+                    Delete
+                  </button>
+                  <button className="bg-green-600 text-white  font-sans border rounded-xl w-24 h-12 mt-2 ">
+                    Update
+                  </button>
+                </div>
               </div>
             ))}
           </div>

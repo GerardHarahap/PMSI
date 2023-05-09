@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import styles from "../../styles/register.module.css";
 import Link from "next/link";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 export default function index() {
   const initialValues = {
@@ -29,9 +27,15 @@ export default function index() {
             <img src="" alt="" />
           </div>
           <div className={styles.lgedu}>
-            <img src="/logo 1.png" alt="logo edutama" className={styles.logoedu} />
+            <img
+              src="/logo 1.png"
+              alt="logo edutama"
+              className={styles.logoedu}
+            />
             <h2 className="font-sans text-4xl font-semibold">New Account</h2>
-            <p className={styles.plgedu}>Please complete the form below, use your valid data</p>
+            <p className={styles.plgedu}>
+              Please complete the form below, use your valid data
+            </p>
           </div>
           <div className={styles.formBx}>
             <form>
